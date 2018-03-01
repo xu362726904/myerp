@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xujunjie.dao.UserDao">
+    <sql id="userColumns">
+        id as "id",
+        name as "name",
+        birthday as "birthday",
+        sex as "sex"
+    </sql>
+    <select id="get" resultType="User">
+        select <include refid="userColumns"></include>
+        from com_user
+        where id=#{0}
+    </select>
+</mapper>
